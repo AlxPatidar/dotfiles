@@ -32,3 +32,7 @@ Oh My Zsh is released under the [MIT license](LICENSE.txt).
 - Author - [Ashok Patidar](https://github.com/AlxPatidar)
 - Stackoverflow - [Ashok](https://stackoverflow.com/users/10893484/ashok)
 - Github - [Alx Patidar](https://github.com/AlxPatidar)
+
+
+
+
