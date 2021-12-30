@@ -68,6 +68,17 @@ set spell spelllang=en_us
 set spell 
 let loaded_netrwPlugin = 1
 set guifont=Monaco\ 14
+set signcolumn=yes:2
+set title
+set smartcase
+set wildmode=longest:full,full
+set list
+set listchars=tab:▸\ ,trail:·
+set nojoinspaces
+set confirm
+set exrc
+set backup
+
 highlight Comment cterm=italic gui=italic   " Showcase comments in italic
 
 set statusline+=%{exists('g:loaded_fugitive')?fugitive#statusline():''}

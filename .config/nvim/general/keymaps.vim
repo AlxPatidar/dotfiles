@@ -27,3 +27,12 @@ nnoremap <silent> <leader>h1 :highlight Highlight1 ctermfg=0 ctermbg=226 guifg=B
 nnoremap <silent> <leader>h2 :highlight Highlight2 ctermfg=0 ctermbg=51 guifg=Black guibg=Cyan<CR> :execute '2match Highlight2 /\<<C-r><C-w>\>/'<cr>
 nnoremap <silent> <leader>h3 :highlight Highlight3 ctermfg=0 ctermbg=46 guifg=Black guibg=Green<CR> :execute '3match Highlight3 /\<<C-r><C-w>\>/'<cr>
 
+" Reselect visual selection after indenting
+vnoremap < <gv
+vnoremap > >gv
+
+" Allow gf to open non-existent files
+map gf :edit <cfile><cr>
+
+nmap <leader>k :nohlsearch<CR>
+nmap <leader>Q :bufdo bdelete<cr>
