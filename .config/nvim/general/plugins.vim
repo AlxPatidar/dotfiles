@@ -29,10 +29,13 @@ call plug#begin()
  " fzf finder
  Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
  Plug 'junegunn/fzf.vim'
+ Plug 'antoinemadec/coc-fzf'
  " coc for completion 
  Plug 'neoclide/coc.nvim', {'branch': 'release'}
  " multiple cursors
  Plug 'terryma/vim-multiple-cursors'
+ Plug 'mg979/vim-visual-multi', {'branch': 'master'}
+
  " neard tree
  Plug 'frazrepo/vim-rainbow'          " vim rainbow bracket color to show bracket color
  Plug 'ryanoasis/vim-devicons'        " Show folder and file icons  in nerd tree
@@ -59,7 +62,9 @@ call plug#begin()
  Plug 'APZelos/blamer.nvim'
  " add telescope
  Plug 'nvim-lua/plenary.nvim'
+ Plug 'nvim-lua/popup.nvim'
  Plug 'nvim-telescope/telescope.nvim'
+ Plug 'nvim-telescope/telescope-fzf-native.nvim'
  " show tabs
  Plug 'kyazdani42/nvim-web-devicons'
  Plug 'romgrk/barbar.nvim'
@@ -67,6 +72,10 @@ call plug#begin()
  Plug 'tpope/vim-surround'
  " color bracket
  Plug 'frazrepo/vim-rainbow'
+
+ Plug 'unblevable/quick-scope'
+ Plug 'terryma/vim-smooth-scroll'
+ Plug 'AckslD/nvim-neoclip.lua'
  " ==================================
  "        NERD Tree
  " ==================================

@@ -4,8 +4,8 @@ let g:fzf_action = {
   \ 'ctrl-i': 'split',
   \ 'ctrl-v': 'vsplit' }
 
-nnoremap <silent> <C-P> :fzf<CR>
-nnoremap <expr> <C-p> (len(system('git rev-parse')) ? ':Files' : ':GFiles --exclude-standard --others --cached')."\<cr>"
+" nnoremap <silent> <C-P> :fzf<CR>
+" nnoremap <expr> <C-p> (len(system('git rev-parse')) ? ':Files' : ':GFiles --exclude-standard --others --cached')."\<cr>"
 
 " give space in normal mode
 nnoremap ss i<space><esc>
@@ -26,9 +26,6 @@ nnoremap <c-right> :tabnext<cr>
 " rename variable on change
 nmap <F2> <Plug>(coc-rename)
 
-vmap <leader>f  <Plug>(coc-format-selected)
-nmap <leader>f  <Plug>(coc-format-selected)
-
 nnoremap <C-I> :Prettier<cr>
 
 " comment and uncomment
@@ -36,7 +33,7 @@ nnoremap <C-C> :call NERDComment(0,"toggle")<CR>
 vnoremap <C-C> :call NERDComment(0,"toggle")<CR>
 
 " nnoremap <C-f> :FZF<CR>
-nnoremap <C-f> :Ag<CR>
+" nnoremap <C-f> :Ag<CR>
 
 nnoremap tn :tabedit<CR>
 

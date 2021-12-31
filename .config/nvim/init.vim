@@ -16,3 +16,6 @@ source $HOME/.config/nvim/general/tmux.vim
 source $HOME/.config/nvim/general/telescop.vim
 source $HOME/.config/nvim/general/lspsage.vim
 source $HOME/.config/nvim/general/git.vim
+
+source $HOME/.config/nvim/general/floaterm.vim
+source $HOME/.config/nvim/general/scope.vim
