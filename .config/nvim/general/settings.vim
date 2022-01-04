@@ -5,10 +5,8 @@ set termguicolors
 set noswapfile
 set smartindent
 set nu
-set nowrap
 set incsearch
 set hlsearch
-" set nohlsearch
 set ignorecase
 
 let g:mapleader = "\<Space>"

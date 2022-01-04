@@ -1,8 +1,17 @@
 " Find files using Telescope command-line sugar.
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
-nnoremap <leader>g <cmd>Telescope live_grep<cr>
+" nnoremap <leader>g <cmd>Telescope live_grep<cr>
 nnoremap <leader>b <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+nnoremap <leader>ch <cmd>Telescope command_history<cr>
+
+nnoremap <C-t> <cmd>Telescope file_browser<cr>
+nnoremap <C-b> <cmd>Telescope buffers<cr>
+
+" Git sort cut for git operation
+nnoremap <leader>gb <cmd>Telescope git_branches<cr>
+nnoremap <leader>gs <cmd>Telescope git_status<cr>
+nnoremap <leader>gc <cmd>Telescope git_commits<cr>
 
 " Using Lua functions
 nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
@@ -12,7 +21,7 @@ nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
 
 
 nnoremap <leader>f <cmd>lua require('telescope.builtin').find_files()<cr>
-nnoremap <leader>g <cmd>lua require('telescope.builtin').live_grep()<cr>
+" nnoremap <leader>g <cmd>lua require('telescope.builtin').live_grep()<cr>
 nnoremap <leader>b <cmd>lua require('telescope.builtin').buffers()<cr>
 
 nnoremap <C-f> <cmd>lua require('telescope.builtin').live_grep()<cr>

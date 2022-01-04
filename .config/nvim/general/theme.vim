@@ -14,7 +14,7 @@ set background=dark
 " let base16colorspace=256 
 
 " =====================================
-colorscheme nightfly                                            " Night Fly theme
+ colorschem nightfly                                            " Night Fly theme
 " colorscheme pencil                                              " pencil
 " colorscheme molokai
 " colorscheme base16-default-dark                                 " Base 16 dark theme

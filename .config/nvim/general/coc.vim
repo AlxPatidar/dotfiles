@@ -79,18 +79,18 @@ nmap <leader>ac  <Plug>(coc-codeaction)
 
 " Applying codeAction to the selected region.
 " Example: `<leader>aap` for current paragraph
-xmap <leader>a  <Plug>(coc-codeaction-selected)
-nmap <leader>a  <Plug>(coc-codeaction-selected)
-nmap <leader>ga  <Plug>(coc-codeaction-line)
+" xmap <leader>a  <Plug>(coc-codeaction-selected)
+" nmap <leader>a  <Plug>(coc-codeaction-selected)
+" nmap <leader>ga  <Plug>(coc-codeaction-line)
 
-nnoremap gf <C-W>gf
-vnoremap gf <C-W>gf
+" nnoremap gf <C-W>gf
+" vnoremap gf <C-W>gf
 
 
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
 
-vmap <leader>f  <Plug>(coc-format-selected)
-nmap <leader>f  <Plug>(coc-format-selected)
+" vmap <leader>f  <Plug>(coc-format-selected)
+" nmap <leader>f  <Plug>(coc-format-selected)
 
 
 " Use tab for trigger completion with characters ahead and navigate.

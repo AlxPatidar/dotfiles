@@ -43,6 +43,8 @@ call plug#begin()
  Plug 'tpope/vim-fugitive'            " for git usage 
  Plug 'airblade/vim-gitgutter'
  Plug 'matze/vim-move'                " move line above or below Alt + jklh
+ " tree sitter
+ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
  " tmux
  Plug 'tmux-plugins/vim-tmux'
  " show work space on open
