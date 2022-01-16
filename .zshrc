@@ -119,6 +119,7 @@ export NVM_DIR="/home/ashok/.nvm"
 export ANDROID_HOME=$HOME/Android/Sdk 
 export PATH=$PATH:$ANDROID_HOME/tools 
 export PATH=$PATH:$ANDROID_HOME/platform-tools
+export PATH=$PATH:$ANDROID_HOME/cmdline-tools/latest/bin
 
 export PATH=/opt/flutter/bin:$PATH
 export PATH="$PATH":"$HOME/.pub-cache/bin"
@@ -136,3 +137,5 @@ alias tn='t new -t'
 alias gitk='lazygit'
 
 source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+alias workspace="$HOME/Downloads/project/workspace/workspace.sh"
+alias config='/usr/bin/git --git-dir=/home/ashok/.dotfiles/ --work-tree=/home/ashok'

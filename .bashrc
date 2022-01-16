@@ -123,6 +123,7 @@ export NVM_DIR="$HOME/.nvm"
 export ANDROID_HOME=$HOME/Android/Sdk 
 export PATH=$PATH:$ANDROID_HOME/tools  
 export PATH=$PATH:$ANDROID_HOME/platform-tools
+export PATH=$PATH:$ANDROID_HOME/cmdline-tools/latest/bin
 
 export PATH=/opt/flutter/bin:$PATH
 export PATH="$PATH":"$HOME/.pub-cache/bin"

@@ -1,13 +1,3 @@
-" show relative line on open;:file:w
-set relativenumber
-set nonumber
-set termguicolors
-set noswapfile
-set smartindent
-set nu
-set incsearch
-set hlsearch
-set ignorecase
 
 let g:mapleader = "\<Space>"
 
@@ -40,7 +30,7 @@ set nobackup                            " This is recommended by coc
 set nowritebackup                       " This is recommended by coc
 set updatetime=300                      " Faster completion
 set timeoutlen=500                      " By default timeoutlen is 1000 ms
-set formatoptions-=cro                  " Stop newline continution of comments
+set formatoptions-=cro                  " Stop newline continuation of comments
 set clipboard=unnamedplus               " Copy paste between vim and everything else
 set noerrorbells                        " Don't add sounds for errors/
 set tabstop=4
@@ -52,7 +42,15 @@ set undodir=~/.vim/undo/
 set undofile
 set undolevels=1000
 set undoreload=10000
-
+set relativenumber
+set nonumber
+set termguicolors
+set noswapfile
+set smartindent
+set incsearch
+set hlsearch
+set ignorecase
+set modifiable
 set foldmethod=manual  
 "set foldnestmax=10
 "set nofoldenable
@@ -75,7 +73,6 @@ set listchars=tab:▸\ ,trail:·
 set nojoinspaces
 set confirm
 set exrc
-set backup
 
 highlight Comment cterm=italic gui=italic   " Showcase comments in italic
 
@@ -84,7 +81,6 @@ set statusline+=%{exists('g:loaded_fugitive')?fugitive#statusline():''}
 " for fuzzy finder should be in middle of screen when searching file
 let g:fzf_preview_window = ['right:50%', 'ctrl-/']
 let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6  }  }
-
 
 " FORMATTERS using prettier
 au FileType javascript setlocal formatprg=prettier
