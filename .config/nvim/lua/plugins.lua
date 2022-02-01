@@ -52,16 +52,17 @@ return packer.startup(function(use)
   use "akinsho/bufferline.nvim"
 
   -- LSP
-  use "neovim/nvim-lspconfig" -- enable LSP
-  use "williamboman/nvim-lsp-installer" -- simple to use language server installer
-  use "tamago324/nlsp-settings.nvim" -- language server settings defined in json for
-  use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
-
+  use 'neovim/nvim-lspconfig'               -- Collection of configurations for built-in LSP client
+  use 'hrsh7th/nvim-compe'
   -- Telescope
   use {
     'nvim-telescope/telescope.nvim',
     requires = { {'nvim-lua/plenary.nvim'} }
   }
+  use 'nvim-lua/popup.nvim'
+  use 'nvim-lua/plenary.nvim'
+  use 'nvim-telescope/telescope-fzy-native.nvim'
+
    -- Treesitter
   use {
     "nvim-treesitter/nvim-treesitter",
@@ -71,11 +72,29 @@ return packer.startup(function(use)
 
   -- Git
   use "lewis6991/gitsigns.nvim"
-
+  -- syntex highliter
+  use 'HerringtonDarkholme/yats.vim'
+  use 'maxmellon/vim-jsx-pretty'
 
   -- Theme 
   use 'EdenEast/nightfox.nvim'
   use "lunarvim/darkplus.nvim"
+  use 'bluz71/vim-nightfly-guicolors'
+  use 'shaunsingh/nord.nvim'
+  use 'rose-pine/neovim'
+  use 'folke/tokyonight.nvim'
+  use 'dracula/vim'
+  use 'tiagovla/tokyodark.nvim'
+  use "catppuccin/nvim"
+ --   ==================================
+ --         Utiltity
+ -- ==================================
+  use 'norcalli/nvim-colorizer.lua'          -- A high-performance color highlighter
+  use 'karb94/neoscroll.nvim'                -- Smooth scrolling for window movement commands
+  use 'ttys3/nvim-blamer.lua'                -- A git blame plugin inspired by VS Code's GitLens plugin
+  use 'unblevable/quick-scope'               -- An always-on highlight for a unique character in every word on a line to help you use f, F and family.
+  use 'AckslD/nvim-neoclip.lua'              -- It records everything that gets yanked in your vim session
+  use "folke/zen-mode.nvim"                  -- Code in zen mode
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
@@ -83,4 +102,6 @@ return packer.startup(function(use)
     require("packer").sync()
   end
 end)
+
+
 
