@@ -36,4 +36,9 @@ if zen_mode_status_ok then
 	zen_mode.setup()
 end
 
+-- neoclip is a clipboard manager for neovim inspired by for example clipmenu
+local comment_status_ok, comment_plug = pcall(require, "Comment")
+if comment_status_ok then
+	comment_plug.setup()
+end
 

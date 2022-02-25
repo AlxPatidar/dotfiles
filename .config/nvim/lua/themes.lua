@@ -2,17 +2,39 @@
 -- if not status_ok then
 --   return
 -- end
+-- nightfox.setup({
+--     fox = "nordfox",
+--     alt_nc = true,
+--     styles = {
+--         comments = "italic",
+--         keywords = "bold",
+--         functions = "italic,bold",
+--     },
+--     inverse = {
+--         visual = true,
+--         search = true,
+--         match_paren = true,
+--     },
+-- })
+-- nightfox.load()
+-- vim.cmd("colorscheme melange")
 
--- nightfox.load('Nightfox')
+-- vim.g.sonokai_style = 'maia' -- `'default'`, `'atlantis'`, `'andromeda'`, `'shusia'`, `'maia'`,
+-- vim.cmd("colorscheme sonokai")
+-- vim.g.sonokai_enable_italic = 1
+-- vim.g.sonokai_disable_italic_comment = 1
 
+vim.cmd("colorscheme OceanicNext")  -- OceanicNext
+
+-- vim.cmd("colorscheme everforest")
+-- vim.g.everforest_background = 'hard' -- 'hard', 'medium'(default), 'soft'
 -- vim.cmd [[colorscheme nightfly]]
 
 -- vim.cmd[[colorscheme nord]]
-
 -- vim.cmd('colorscheme rose-pine')
 
-vim.cmd[[colorscheme tokyonight]]
-vim.g.tokyonight_style = "night"
+-- vim.cmd[[colorscheme tokyonight]]
+-- vim.g.tokyonight_style = "night"
 
 -- vim.cmd[[colorscheme dracula]]
 

@@ -44,16 +44,19 @@ return packer.startup(function(use)
   use "wbthomason/packer.nvim" -- Have packer manage itself
 
   use "kyazdani42/nvim-web-devicons"
-  use "kyazdani42/nvim-tree.lua"
-  use "nvim-lualine/lualine.nvim"
+  use "kyazdani42/nvim-tree.lua"           -- show tree like structure for file explorer
+  use "nvim-lualine/lualine.nvim"          -- lua line for show status line in vim bottom
   use "akinsho/toggleterm.nvim"
   use "ahmedkhalf/project.nvim"
   use "lewis6991/impatient.nvim"
   use "akinsho/bufferline.nvim"
 
+  use 'filipdutescu/renamer.nvim'
   -- LSP
   use 'neovim/nvim-lspconfig'               -- Collection of configurations for built-in LSP client
   use 'hrsh7th/nvim-compe'
+  use 'hrsh7th/nvim-cmp'
+  use {'tzachar/cmp-tabnine', run='./install.sh', requires = 'hrsh7th/nvim-cmp'}
   -- Telescope
   use {
     'nvim-telescope/telescope.nvim',
@@ -76,6 +79,8 @@ return packer.startup(function(use)
   use 'HerringtonDarkholme/yats.vim'
   use 'maxmellon/vim-jsx-pretty'
 
+  -- learn
+  use 'ThePrimeagen/vim-be-good'   -- Game for learn
   -- Theme 
   use 'EdenEast/nightfox.nvim'
   use "lunarvim/darkplus.nvim"
@@ -85,7 +90,10 @@ return packer.startup(function(use)
   use 'folke/tokyonight.nvim'
   use 'dracula/vim'
   use 'tiagovla/tokyodark.nvim'
-  use "catppuccin/nvim"
+  use "savq/melange"
+  use 'sainnhe/sonokai' 
+  use 'sainnhe/everforest'
+  use 'mhartington/oceanic-next'
  --   ==================================
  --         Utiltity
  -- ==================================
@@ -95,7 +103,7 @@ return packer.startup(function(use)
   use 'unblevable/quick-scope'               -- An always-on highlight for a unique character in every word on a line to help you use f, F and family.
   use 'AckslD/nvim-neoclip.lua'              -- It records everything that gets yanked in your vim session
   use "folke/zen-mode.nvim"                  -- Code in zen mode
-
+  use "numToStr/Comment.nvim"                -- Comment code
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then
