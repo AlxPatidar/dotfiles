@@ -89,6 +89,16 @@ _G.packer_plugins = {
     path = "/home/ashok/.local/share/nvim/site/pack/packer/start/darkplus.nvim",
     url = "https://github.com/lunarvim/darkplus.nvim"
   },
+  ["dart-vim-plugin"] = {
+    loaded = true,
+    path = "/home/ashok/.local/share/nvim/site/pack/packer/start/dart-vim-plugin",
+    url = "https://github.com/dart-lang/dart-vim-plugin"
+  },
+  ["dartlang-snippets"] = {
+    loaded = true,
+    path = "/home/ashok/.local/share/nvim/site/pack/packer/start/dartlang-snippets",
+    url = "https://github.com/natebosch/dartlang-snippets"
+  },
   everforest = {
     loaded = true,
     path = "/home/ashok/.local/share/nvim/site/pack/packer/start/everforest",
@@ -249,25 +259,80 @@ _G.packer_plugins = {
     path = "/home/ashok/.local/share/nvim/site/pack/packer/start/tokyonight.nvim",
     url = "https://github.com/folke/tokyonight.nvim"
   },
+  ["typescript-vim"] = {
+    loaded = true,
+    path = "/home/ashok/.local/share/nvim/site/pack/packer/start/typescript-vim",
+    url = "https://github.com/leafgarland/typescript-vim"
+  },
   vim = {
     loaded = true,
     path = "/home/ashok/.local/share/nvim/site/pack/packer/start/vim",
     url = "https://github.com/dracula/vim"
   },
-  ["vim-be-good"] = {
+  ["vim-colorschemes"] = {
     loaded = true,
-    path = "/home/ashok/.local/share/nvim/site/pack/packer/start/vim-be-good",
-    url = "https://github.com/ThePrimeagen/vim-be-good"
+    path = "/home/ashok/.local/share/nvim/site/pack/packer/start/vim-colorschemes",
+    url = "https://github.com/flazz/vim-colorschemes"
+  },
+  ["vim-flutter"] = {
+    loaded = true,
+    path = "/home/ashok/.local/share/nvim/site/pack/packer/start/vim-flutter",
+    url = "https://github.com/thosakwe/vim-flutter"
+  },
+  ["vim-javascript"] = {
+    loaded = true,
+    path = "/home/ashok/.local/share/nvim/site/pack/packer/start/vim-javascript",
+    url = "https://github.com/pangloss/vim-javascript"
   },
   ["vim-jsx-pretty"] = {
     loaded = true,
     path = "/home/ashok/.local/share/nvim/site/pack/packer/start/vim-jsx-pretty",
     url = "https://github.com/maxmellon/vim-jsx-pretty"
   },
+  ["vim-lsc"] = {
+    loaded = true,
+    path = "/home/ashok/.local/share/nvim/site/pack/packer/start/vim-lsc",
+    url = "https://github.com/natebosch/vim-lsc"
+  },
+  ["vim-lsc-dart"] = {
+    loaded = true,
+    path = "/home/ashok/.local/share/nvim/site/pack/packer/start/vim-lsc-dart",
+    url = "https://github.com/natebosch/vim-lsc-dart"
+  },
+  ["vim-multiple-cursors"] = {
+    loaded = true,
+    path = "/home/ashok/.local/share/nvim/site/pack/packer/start/vim-multiple-cursors",
+    url = "https://github.com/terryma/vim-multiple-cursors"
+  },
   ["vim-nightfly-guicolors"] = {
     loaded = true,
     path = "/home/ashok/.local/share/nvim/site/pack/packer/start/vim-nightfly-guicolors",
     url = "https://github.com/bluz71/vim-nightfly-guicolors"
+  },
+  ["vim-prettier"] = {
+    loaded = true,
+    path = "/home/ashok/.local/share/nvim/site/pack/packer/start/vim-prettier",
+    url = "https://github.com/prettier/vim-prettier"
+  },
+  ["vim-rainbow"] = {
+    loaded = true,
+    path = "/home/ashok/.local/share/nvim/site/pack/packer/start/vim-rainbow",
+    url = "https://github.com/frazrepo/vim-rainbow"
+  },
+  ["vim-react-snippets"] = {
+    loaded = true,
+    path = "/home/ashok/.local/share/nvim/site/pack/packer/start/vim-react-snippets",
+    url = "https://github.com/mlaursen/vim-react-snippets"
+  },
+  ["vim-snippets"] = {
+    loaded = true,
+    path = "/home/ashok/.local/share/nvim/site/pack/packer/start/vim-snippets",
+    url = "https://github.com/honza/vim-snippets"
+  },
+  ["vim-surround"] = {
+    loaded = true,
+    path = "/home/ashok/.local/share/nvim/site/pack/packer/start/vim-surround",
+    url = "https://github.com/tpope/vim-surround"
   },
   ["yats.vim"] = {
     loaded = true,

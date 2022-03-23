@@ -24,8 +24,6 @@
 -- vim.g.sonokai_enable_italic = 1
 -- vim.g.sonokai_disable_italic_comment = 1
 
-vim.cmd("colorscheme OceanicNext")  -- OceanicNext
-
 -- vim.cmd("colorscheme everforest")
 -- vim.g.everforest_background = 'hard' -- 'hard', 'medium'(default), 'soft'
 -- vim.cmd [[colorscheme nightfly]]
@@ -41,3 +39,11 @@ vim.cmd("colorscheme OceanicNext")  -- OceanicNext
 -- vim.cmd[[colorscheme tokyodark]]
 
 -- vim.cmd[[colorscheme catppuccin]]
+
+-- Faviorite
+vim.cmd[[colorscheme monokai-phoenix]]
+-- vim.cmd[[colorscheme moriarty]]
+-- vim.cmd[[colorscheme OceanicNext]]
+
+-- let my_color_scheme = ['monokai-phoenix', 'moriarty', 'OceanicNext']
+-- execute  'colorscheme ' my_color_scheme[rand() % (len(my_color_scheme) -1 )]

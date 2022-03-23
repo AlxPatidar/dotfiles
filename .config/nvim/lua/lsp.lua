@@ -20,7 +20,7 @@ end
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
-local servers = { 'tsserver' }
+local servers = { 'tsserver', 'dartls' }
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup {
     on_attach = on_attach,
@@ -38,6 +38,7 @@ nvim_lsp.tsserver.setup{
     }
 }
 
+nvim_lsp.dartls.setup{}
 -- LSP Prevents inline buffer annotations
 vim.diagnostic.open_float()
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {

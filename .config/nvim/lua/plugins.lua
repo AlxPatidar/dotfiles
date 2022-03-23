@@ -43,21 +43,26 @@ return packer.startup(function(use)
   -- My plugins here
   use "wbthomason/packer.nvim" -- Have packer manage itself
 
-  use "kyazdani42/nvim-web-devicons"
-  use "kyazdani42/nvim-tree.lua"           -- show tree like structure for file explorer
-  use "nvim-lualine/lualine.nvim"          -- lua line for show status line in vim bottom
-  use "akinsho/toggleterm.nvim"
-  use "ahmedkhalf/project.nvim"
-  use "lewis6991/impatient.nvim"
-  use "akinsho/bufferline.nvim"
-
-  use 'filipdutescu/renamer.nvim'
+  use 'kyazdani42/nvim-web-devicons'
+  use 'kyazdani42/nvim-tree.lua'           -- show tree like structure for file explorer
+  use 'nvim-lualine/lualine.nvim'          -- lua line for show status line in vim bottom
+  use 'akinsho/toggleterm.nvim'            -- open toggle term
+  use 'ahmedkhalf/project.nvim'            -- show opened file and folder on vim start
+  use 'lewis6991/impatient.nvim'           -- lazy load plugins on vim start
+  use 'akinsho/bufferline.nvim'            -- show status line beutiful
+  use 'filipdutescu/renamer.nvim'          -- rename variable
+  use 'tpope/vim-surround'                 -- change on surround
+  use 'frazrepo/vim-rainbow'               -- color bracket 
+  -- ==================================
   -- LSP
+  -- ==================================
   use 'neovim/nvim-lspconfig'               -- Collection of configurations for built-in LSP client
   use 'hrsh7th/nvim-compe'
   use 'hrsh7th/nvim-cmp'
   use {'tzachar/cmp-tabnine', run='./install.sh', requires = 'hrsh7th/nvim-cmp'}
+  -- ==================================
   -- Telescope
+  -- ==================================
   use {
     'nvim-telescope/telescope.nvim',
     requires = { {'nvim-lua/plenary.nvim'} }
@@ -65,51 +70,71 @@ return packer.startup(function(use)
   use 'nvim-lua/popup.nvim'
   use 'nvim-lua/plenary.nvim'
   use 'nvim-telescope/telescope-fzy-native.nvim'
-
-   -- Treesitter
+  -- ==================================
+  -- Treesitter
+  -- ==================================
   use {
-    "nvim-treesitter/nvim-treesitter",
+    'nvim-treesitter/nvim-treesitter',
     run = ":TSUpdate",
   }
-  use "JoosepAlviste/nvim-ts-context-commentstring"
-
+  use 'JoosepAlviste/nvim-ts-context-commentstring'
+  -- ==================================
   -- Git
-  use "lewis6991/gitsigns.nvim"
+  -- ==================================
+  use 'lewis6991/gitsigns.nvim'
+  -- ==================================
   -- syntex highliter
+  -- ==================================
   use 'HerringtonDarkholme/yats.vim'
-  use 'maxmellon/vim-jsx-pretty'
-
-  -- learn
-  use 'ThePrimeagen/vim-be-good'   -- Game for learn
+  -- ==================================
   -- Theme 
+  -- ==================================
   use 'EdenEast/nightfox.nvim'
-  use "lunarvim/darkplus.nvim"
+  use 'lunarvim/darkplus.nvim'
   use 'bluz71/vim-nightfly-guicolors'
   use 'shaunsingh/nord.nvim'
   use 'rose-pine/neovim'
   use 'folke/tokyonight.nvim'
   use 'dracula/vim'
   use 'tiagovla/tokyodark.nvim'
-  use "savq/melange"
+  use 'savq/melange'
   use 'sainnhe/sonokai' 
   use 'sainnhe/everforest'
   use 'mhartington/oceanic-next'
- --   ==================================
- --         Utiltity
- -- ==================================
+  use 'flazz/vim-colorschemes'
+  -- ==================================
+  -- Flutter
+  -- ==================================
+  use 'honza/vim-snippets'
+  use 'natebosch/dartlang-snippets'
+  use 'thosakwe/vim-flutter'
+  use 'dart-lang/dart-vim-plugin'
+  use 'natebosch/vim-lsc'
+  use 'natebosch/vim-lsc-dart'
+  -- ==================================
+  -- Javascript Language
+  -- ==================================
+  use 'mlaursen/vim-react-snippets'
+  use 'pangloss/vim-javascript'
+  use 'leafgarland/typescript-vim'
+  use 'maxmellon/vim-jsx-pretty'
+  -- =================================
+  --         Utiltity
+  -- =================================
   use 'norcalli/nvim-colorizer.lua'          -- A high-performance color highlighter
   use 'karb94/neoscroll.nvim'                -- Smooth scrolling for window movement commands
   use 'ttys3/nvim-blamer.lua'                -- A git blame plugin inspired by VS Code's GitLens plugin
   use 'unblevable/quick-scope'               -- An always-on highlight for a unique character in every word on a line to help you use f, F and family.
   use 'AckslD/nvim-neoclip.lua'              -- It records everything that gets yanked in your vim session
-  use "folke/zen-mode.nvim"                  -- Code in zen mode
-  use "numToStr/Comment.nvim"                -- Comment code
+  use 'folke/zen-mode.nvim'                  -- Code in zen mode
+  use 'numToStr/Comment.nvim'                -- Comment code
+  use 'terryma/vim-multiple-cursors'         -- use multiple cursors like sublime
+  use 'prettier/vim-prettier'                -- format code
+  
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then
     require("packer").sync()
   end
 end)
-
-
 

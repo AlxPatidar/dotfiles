@@ -21,8 +21,6 @@ export ZSH="/home/ashok/.oh-my-zsh"
 # ZSH_THEME="powerlevel10k/powerlevel10k"
 #ZSH_THEME="agnoster"
 
-alias ll="lsd -Alh"
-alias ls="lsd --group-dirs first"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -135,6 +133,8 @@ alias ta='t a -t'
 alias tls='t ls'
 alias tn='t new -t'
 alias gitk='lazygit'
+alias ll="lsd -Alh"
+alias ls="lsd --group-dirs first"
 
 source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 alias workspace="$HOME/Downloads/project/workspace/workspace.sh"

@@ -5,7 +5,6 @@ if scroll_status_ok then
   })
 end
 
-
 -- A git blame plugin for neovim inspired by VS Code's GitLens plugin
 local blamer_status_ok, blamer = pcall(require, "nvim-blamer")
 if blamer_status_ok then
@@ -13,7 +12,6 @@ if blamer_status_ok then
 	    format = '%committer │ %committer-time-human │ %summary',
 	})
 end
-
 
 -- A high-performance color highlighter
 local colorizer_status_ok, colorizer = pcall(require, "colorizer")
@@ -41,4 +39,3 @@ local comment_status_ok, comment_plug = pcall(require, "Comment")
 if comment_status_ok then
 	comment_plug.setup()
 end
-
