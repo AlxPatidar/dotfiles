@@ -37,10 +37,10 @@ local opts = { noremap = true, silent = true }
 -- noremap <silent> <leader>P "+P
 
 
-map("i", "jj", "<Esc>")                            -- change mode
-map("n", "<Leader>u", ":PackerSync<CR>")                                         -- Update Plugins
+map("i", "jj", "<Esc>")                                               -- change mode
+map("n", "<Leader>u", ":PackerSync<CR>")                              -- Update Plugins
 map("n", "<Leader>v", "<cmd>e $MYVIMRC<CR>")                          -- Open nvimrc file
-map("n", "<Leader>sv", ":luafile %<CR>")                                           -- Source nvimrc file
+map("n", "<Leader>sv", ":luafile %<CR>")                              -- Source nvimrc file
 
 
 -- Easier split mappings
@@ -79,21 +79,27 @@ cmap('<C-e>', '<End>')
 -- Find files using Telescope command-line sugar.
 nmap("<C-p>", "<cmd>Telescope find_files<cr>")
 nmap("<C-f>", "<cmd>Telescope live_grep<cr>")
-nmap("<C-b>", "<cmd>Telescope buffers<cr>")
+nmap("<leader>fb", "<cmd>Telescope buffers<cr>")
 nmap("<leader>ch", "<cmd>Telescope command_history<cr>")
 nmap("<leader>hh", "<cmd>Telescope help_tags<cr>")
 nmap("<leader>ff", "<cmd>Telescope file_browser<cr>")
 nmap("<leader>nc", "<cmd>Telescope neoclip<cr>")
-
+nmap("<leader>vim", "<cmd>lua require('function').search_dotfiles()<CR>")
+-- nmap("<leader>co", "<cmd>lua require('function').color_selector()<cr>")
+-- nmap("<C-p>", "<cmd>lua require('telescope.builtin').colorscheme()<cr>")
 
 nmap("<leader>b", "<cmd>Telescope git_branches<cr>")
 nmap("<leader>s", "<cmd>Telescope git_status<cr>")
 nmap("<leader>c", "<cmd>Telescope git_commits<cr>")
 
+-- Zoxide List
+nmap("<leader>cd", "<cmd>lua require('telescope').extensions.zoxide.list{}<CR>")
+nmap("<leader>p", "<cmd>lua require('telescope').extensions.neoclip.default()<CR>")
+nmap("<leader>pro", "<cmd>lua require('telescope').extensions.project.project{}<CR>")
+
 -- LSP
 nmap('K', '<cmd>Lspsaga hover_doc<cr>')
 imap('<C-k>', '<cmd>Lspsaga hover_doc<cr>')
-nmap('gh', '<cmd>Lspsaga lsp_finder<cr>')
 nmap('<C-e>', '<cmd>Lspsaga show_line_diagnostics<CR>')
 
 -- git
@@ -119,6 +125,11 @@ map("i", "<C-t>", "<cmd>NvimTreeToggle<CR>")
 -- toggle term
 nmap("<F1>", "<cmd>ToggleTerm<cr>")
 
+-- vim fugitive
+nmap("<space>gh", "<cmd>diffget //2<cr>")
+nmap("<space>gu", "<cmd>diffget //3<cr>")
+nmap("<space>gs", "<cmd>G<cr>")
+
 -- Lsp
 map('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', { noremap=true, silent=true })
 map('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', { noremap=true, silent=true })
@@ -137,3 +148,8 @@ map('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<CR>', { noremap=true, silent
 map('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<CR>', { noremap=true, silent=true })
 map('n', '<space>q', '<cmd>lua vim.diagnostic.setloclist()<CR>', { noremap=true, silent=true })
 map('n', '<space>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', { noremap=true, silent=true })
+
+-- vim default config
+-- nmap("n", "nzzzv")
+-- nmap("N", "Nzzzv")
+-- nmap("J", "mzJ`z")

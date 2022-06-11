@@ -22,13 +22,7 @@ colorizer.setup({
 }, { mode = 'background' })
 end
 
--- neoclip is a clipboard manager for neovim inspired by for example clipmenu
-local neoclip_status_ok, neoclip = pcall(require, "neoclip")
-if neoclip_status_ok then
-	neoclip.setup()
-end
-
--- neoclip is a clipboard manager for neovim inspired by for example clipmenu
+-- zen-mode is used for programing with dnd mode :smile
 local zen_mode_status_ok, zen_mode = pcall(require, "zen-mode")
 if zen_mode_status_ok then
 	zen_mode.setup()
@@ -38,4 +32,21 @@ end
 local comment_status_ok, comment_plug = pcall(require, "Comment")
 if comment_status_ok then
 	comment_plug.setup()
+end
+
+-- nvim auto pair to auto complete close bracket
+local auto_pair_status_ok, auto_pair_plug = pcall(require, "nvim-autopairs")
+if auto_pair_status_ok then
+	auto_pair_plug.setup()
+end
+
+-- manage workspace using project
+local project_ok, project_plug = pcall(require, "project_nvim")
+if project_ok then
+	project_plug.setup()
+end
+-- setup fzf 
+local fzf_ok, fzf_plug = pcall(require, "fzf_lsp")
+if fzf_ok then
+	fzf_plug.setup()
 end

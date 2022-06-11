@@ -122,6 +122,10 @@ telescope.setup {
     -- builtin picker
   },
   extensions = {
+    fzy_native = {
+      override_generic_sorter = false,
+      override_file_sorter = true
+    }
     -- Your extension configuration goes here:
     -- extension_name = {
     --   extension_config_key = value,
@@ -129,3 +133,14 @@ telescope.setup {
     -- please take a look at the readme of the extension you want to configure
   },
 }
+-- show file browser in telescope
+require("telescope").load_extension("file_browser")
+require("telescope").load_extension("projects")
+-- show fzy native
+require('telescope').load_extension('fzy_native')
+-- zoxide is a smarter cd command, inspired by z and autojump
+require('telescope').load_extension('zoxide')
+-- neoclip to show copied buffer
+require('telescope').load_extension('neoclip')
+
+require('telescope').load_extension('repo')
