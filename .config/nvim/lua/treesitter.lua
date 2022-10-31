@@ -4,11 +4,11 @@ if not status_ok then
 end
 
 configs.setup {
-  ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+  -- A list of parser names, or "all"
+  ensure_installed = { "c", "lua", "rust", "json", "javascript", "go", "html", "css", "typescript" },
   sync_install = false, -- install languages synchronously (only applied to `ensure_installed`)
   ignore_install = { "" }, -- List of parsers to ignore installin
   open_on_setup = false,
-  auto_close = true,
   autopairs = {
     enable = true,
   },

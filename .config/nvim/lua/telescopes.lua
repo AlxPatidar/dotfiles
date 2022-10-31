@@ -9,14 +9,16 @@ telescope.setup {
   defaults = {
     prompt_prefix = " 🔍 ",
     selection_caret = "> ",
-    path_display = { "smart" },
+    path_display = { "smarter" },
     vimgrep_arguments = {
       'rg', '--color=never',
       '--no-heading',
       '--with-filename',
       '--line-number',
       '--column',
-      '--smart-case'
+      '--smart-case',
+      '--ignore-file',
+      '.gitignore'
     },
     entry_prefix = "  ",
     initial_mode = "insert",
@@ -32,19 +34,19 @@ telescope.setup {
       },
     },
     file_sorter =  require'telescope.sorters'.get_fuzzy_file,
-    file_ignore_patterns = {},
+    file_ignore_patterns = {
+     "node_modules", "build", "dist", "yarn.lock", "package-lock.json", "undo"
+    },
     generic_sorter =  require'telescope.sorters'.get_generic_fuzzy_sorter,
     winblend = 0,
     border = {},
     borderchars = { '─', '│', '─', '│', '╭', '╮', '╯', '╰' },
     color_devicons = true,
     use_less = true,
-    path_display = {},
     set_env = { ['COLORTERM'] = 'truecolor' }, -- default = nil,
     file_previewer = require'telescope.previewers'.vim_buffer_cat.new,
     grep_previewer = require'telescope.previewers'.vim_buffer_vimgrep.new,
     qflist_previewer = require'telescope.previewers'.vim_buffer_qflist.new,
-
     -- Developer configurations: Not meant for general override
     buffer_previewer_maker = require'telescope.previewers'.buffer_previewer_maker,
     mappings = {
@@ -122,10 +124,6 @@ telescope.setup {
     -- builtin picker
   },
   extensions = {
-    fzy_native = {
-      override_generic_sorter = false,
-      override_file_sorter = true
-    }
     -- Your extension configuration goes here:
     -- extension_name = {
     --   extension_config_key = value,
@@ -133,14 +131,16 @@ telescope.setup {
     -- please take a look at the readme of the extension you want to configure
   },
 }
--- show file browser in telescope
-require("telescope").load_extension("file_browser")
-require("telescope").load_extension("projects")
--- show fzy native
-require('telescope').load_extension('fzy_native')
--- zoxide is a smarter cd command, inspired by z and autojump
-require('telescope').load_extension('zoxide')
--- neoclip to show copied buffer
-require('telescope').load_extension('neoclip')
 
-require('telescope').load_extension('repo')
+-- To get telescope-file-browser loaded and working with telescope,
+require("telescope").load_extension 'file_browser'
+-- list out project and show project
+require("telescope").load_extension 'projects'
+-- show fzy native
+require('telescope').load_extension 'fzy_native'
+-- zoxide is a smarter cd command, inspired by z and autojump
+require('telescope').load_extension 'zoxide'
+-- neoclip to show copied buffer
+require('telescope').load_extension 'neoclip'
+-- repo for switching between repo
+require('telescope').load_extension 'repo'

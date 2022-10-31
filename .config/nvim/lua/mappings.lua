@@ -6,53 +6,41 @@ local function map(mode, lhs, rhs, opts)
   vim.api.nvim_set_keymap(mode, lhs, rhs, options)
 end
 
-function nmap(shortcut, command)
+local function nmap(shortcut, command)
   map('n', shortcut, command)
 end
 
-function imap(shortcut, command)
+local function imap(shortcut, command)
   map('i', shortcut, command)
 end
 
-function vmap(shortcut, command)
+local function vmap(shortcut, command)
   map('v', shortcut, command)
 end
 
-function cmap(shortcut, command)
+local function cmap(shortcut, command)
   map('c', shortcut, command)
-end
-
-function tmap(shortcut, command)
-  map('t', shortcut, command)
 end
 
 -- Map leader to space
 vim.g.mapleader = " "
 local opts = { noremap = true, silent = true }
+local silent = { silent = true }
 
-
--- noremap <silent> <leader>y "+y
--- noremap <silent> <leader>Y "+Y
--- noremap <silent> <leader>p "+p
--- noremap <silent> <leader>P "+P
-
-
-map("i", "jj", "<Esc>")                                               -- change mode
-map("n", "<Leader>u", ":PackerSync<CR>")                              -- Update Plugins
-map("n", "<Leader>v", "<cmd>e $MYVIMRC<CR>")                          -- Open nvimrc file
-map("n", "<Leader>sv", ":luafile %<CR>")                              -- Source nvimrc file
-
+map("i", "jj", "<Esc>") -- change mode
+map("n", "<Leader>u", ":PackerSync<CR>") -- Update Plugins
+map("n", "<Leader>v", ":source $MYVIMRC<CR>") -- Open nvimrc file
+map("n", "<Leader>sv", ":luafile %<CR>") -- Source nvimrc file
 
 -- Easier split mappings
-map("n", "<Leader><Down>", "<C-W><C-J>", { silent = true })
-map("n", "<Leader><Up>", "<C-W><C-K>", { silent = true })
-map("n", "<Leader><Right>", "<C-W><C-L>", { silent = true })
-map("n", "<Leader><Left>", "<C-W><C-H>", { silent = true })
-map("n", "<Leader>;", "<C-W>R", { silent = true })
-map("n", "<Leader>[", "<C-W>_", { silent = true })
-map("n", "<Leader>]", "<C-W>|", { silent = true })
-map("n", "<Leader>=", "<C-W>=", { silent = true })
-
+map("n", "<Leader><Down>", "<C-W><C-J>", silent)
+map("n", "<Leader><Up>", "<C-W><C-K>", silent)
+map("n", "<Leader><Right>", "<C-W><C-L>", silent)
+map("n", "<Leader><Left>", "<C-W><C-H>", silent)
+map("n", "<Leader>;", "<C-W>R", silent)
+map("n", "<Leader>[", "<C-W>_", silent)
+map("n", "<Leader>]", "<C-W>|", silent)
+map("n", "<Leader>=", "<C-W>=", silent)
 
 map("i", "<C-s>", "<cmd>:w<CR>") -- Alternate way to save
 map("n", "<C-s>", "<cmd>:w<CR>") -- Alternate way to save
@@ -79,18 +67,20 @@ cmap('<C-e>', '<End>')
 -- Find files using Telescope command-line sugar.
 nmap("<C-p>", "<cmd>Telescope find_files<cr>")
 nmap("<C-f>", "<cmd>Telescope live_grep<cr>")
-nmap("<leader>fb", "<cmd>Telescope buffers<cr>")
-nmap("<leader>ch", "<cmd>Telescope command_history<cr>")
 nmap("<leader>hh", "<cmd>Telescope help_tags<cr>")
-nmap("<leader>ff", "<cmd>Telescope file_browser<cr>")
+nmap("<leader>ch", "<cmd>Telescope command_history<cr>")
+nmap("<leader>file", "<cmd>Telescope file_browser<cr>")
+nmap("<leader>fb", "<cmd>lua require('telescope.builtin').buffers()<cr>")
 nmap("<leader>nc", "<cmd>Telescope neoclip<cr>")
-nmap("<leader>vim", "<cmd>lua require('function').search_dotfiles()<CR>")
--- nmap("<leader>co", "<cmd>lua require('function').color_selector()<cr>")
--- nmap("<C-p>", "<cmd>lua require('telescope.builtin').colorscheme()<cr>")
 
-nmap("<leader>b", "<cmd>Telescope git_branches<cr>")
-nmap("<leader>s", "<cmd>Telescope git_status<cr>")
-nmap("<leader>c", "<cmd>Telescope git_commits<cr>")
+nmap("<leader>vim", "<cmd>lua require('function').search_dotfiles()<CR>")
+nmap("<leader>kk", "<cmd>lua require('function').find_in_folder()<CR>")
+nmap("<leader>ff", "<cmd>lua require('function').find_in_folder()<CR>")
+-- search in folder
+nmap("<C-F>f", "<cmd>CtrlSF")
+-- Git
+nmap("<leader>gb", "<cmd>Telescope git_branches<cr>")
+nmap("<leader>gs", "<cmd>Telescope git_status<cr>")
 
 -- Zoxide List
 nmap("<leader>cd", "<cmd>lua require('telescope').extensions.zoxide.list{}<CR>")
@@ -100,16 +90,22 @@ nmap("<leader>pro", "<cmd>lua require('telescope').extensions.project.project{}<
 -- LSP
 nmap('K', '<cmd>Lspsaga hover_doc<cr>')
 imap('<C-k>', '<cmd>Lspsaga hover_doc<cr>')
+nmap('gh', '<cmd>Lspsaga lsp_finder<cr>')
 nmap('<C-e>', '<cmd>Lspsaga show_line_diagnostics<CR>')
 
 -- git
 nmap('<C-g>', '<cmd>GitMessenger<cr>')
 
+-- close tab
+map("n", "<C-d>", "<cmd>:bdelete<CR>")
+nmap("<leader>d", "<cmd>:bdelete<CR>")
+nmap("<leader>bd", "<cmd>:bdelete<CR>")
+nmap("<leader>bn", "<cmd>:bNext<CR>")
+nmap("<leader>bp", "<cmd>:bprevious<CR>")
 
 -- Move text up and down
 map("n", "<A-j>", ":NvimTreeToggle<CR>")
 map("n", "<A-k>", "<Esc>:m .-2<CR>==gi")
-
 
 -- Move text up and down
 map("x", "J", ":move '>+1<CR>gv-gv")
@@ -117,6 +113,8 @@ map("x", "K", ":move '<-2<CR>gv-gv")
 map("x", "<A-j>", ":move '>+1<CR>gv-gv")
 map("x", "<A-k>", ":move '<-2<CR>gv-gv")
 
+-- git
+nmap('<C-g>', '<cmd>GitMessenger<cr>')
 
 -- NvimTreeToggle
 map("n", "<C-t>", "<cmd>NvimTreeToggle<CR>")
@@ -131,25 +129,21 @@ nmap("<space>gu", "<cmd>diffget //3<cr>")
 nmap("<space>gs", "<cmd>G<cr>")
 
 -- Lsp
-map('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', { noremap=true, silent=true })
-map('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', { noremap=true, silent=true })
-map('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', { noremap=true, silent=true })
-map('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', { noremap=true, silent=true })
-map('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', { noremap=true, silent=true })
-map('n', '<space>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', { noremap=true, silent=true })
-map('n', '<space>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', { noremap=true, silent=true })
-map('n', '<space>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', { noremap=true, silent=true })
-map('n', '<space>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>', { noremap=true, silent=true })
-map('n', '<F2>', '<cmd>lua vim.lsp.buf.rename()<CR>', { noremap=true, silent=true })
-map('n', '<space>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', { noremap=true, silent=true })
-map('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', { noremap=true, silent=true })
-map('n', '<space>e', '<cmd>lua vim.diagnostic.open_float()<CR>', { noremap=true, silent=true })
-map('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<CR>', { noremap=true, silent=true })
-map('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<CR>', { noremap=true, silent=true })
-map('n', '<space>q', '<cmd>lua vim.diagnostic.setloclist()<CR>', { noremap=true, silent=true })
-map('n', '<space>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', { noremap=true, silent=true })
+map('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
+map('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
+map('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
+map('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
+map('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
+map('n', '<space>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', opts)
+map('n', '<space>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', opts)
+map('n', '<space>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opts)
+map('n', '<space>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
+map('n', '<F2>', '<cmd>j<CR>', opts)
+map('n', '<space>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
+map('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
+map('n', '<space>e', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
+map('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
+map('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
+map('n', '<space>q', '<cmd>lua vim.diagnostic.setloclist()<CR>', opts)
+map('n', '<space>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
 
--- vim default config
--- nmap("n", "nzzzv")
--- nmap("N", "Nzzzv")
--- nmap("J", "mzJ`z")

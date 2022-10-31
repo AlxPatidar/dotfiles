@@ -9,12 +9,12 @@ end
 
 local diagnostics = {
   "diagnostics",
-  separator = { right = '' , left = '' }, 
-  right_padding = 2, 
+  separator = { right = '' , left = '' },
+  right_padding = 2,
   sources = { "nvim_diagnostic" },
   sections = { "error", "warn" },
   symbols = { error = " ", warn = " " },
-  colored = false,
+  colored = true,
   update_in_insert = false,
   always_visible = true,
 }
@@ -93,23 +93,23 @@ local bubbles_theme = {
 
 lualine.setup {
   options = {
-    icons_enabled = true,
     theme = bubbles_theme,
     component_separators = '|',
-    disabled_filetypes = { "alpha", "dashboard", "NvimTree", "Outline" },
     section_separators = { left = '', right = '' },
   },
   sections = {
     lualine_a = {
-      { 'mode', separator = { right = '' , left = '' } , right_padding = 2 },
+      { 'mode', separator = { left = '' }, right_padding = 2 },
+    },
+    lualine_b = { 'filename', branch },
+    lualine_c = { 'fileformat' },
+    lualine_x = { diff },
+    lualine_y = {
+      'filetype',
       diagnostics,
     },
-    lualine_b = { 'filename', 'branch' },
-    lualine_c = { 'fileformat' },
-    lualine_x = { spaces, "encoding", filetype },
-    lualine_y = { diff, 'filetype', 'progress' },
     lualine_z = {
-      { 'location', separator = { right = '', left = '' }, left_padding = 1 },
+      { 'progress', separator = { right = '' }, left_padding = 2 },
     },
   },
   inactive_sections = {
@@ -121,5 +121,5 @@ lualine.setup {
     lualine_z = { 'location' },
   },
   tabline = {},
-  extensions = {},
+  extensions = {}
 }
