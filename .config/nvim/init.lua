@@ -32,6 +32,7 @@ require("plugins.lsp.masons")
 require("plugins.lsp.lspconfig")
 require("plugins.lsp.lspsaga")
 require("plugins.lsp.null-ls")
+require("plugins.wilder")
 -- ================
 -- Treesitter
 -- ================

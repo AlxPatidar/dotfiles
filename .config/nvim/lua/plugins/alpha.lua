@@ -146,7 +146,7 @@ local preview = {
 	"<spc>gb  git blame",
 	"<spc>gs  git status",
 	"S-nc     Open neoclip",
-	'""p      Paste neoclip text'
+	'""p      Paste neoclip text',
 }
 
 local lsp_nav1 = {
@@ -154,17 +154,16 @@ local lsp_nav1 = {
 	"?pattern          backward search",
 	":%s/old/new/g     Replace all old with new",
 	":%s/old/new/gc    Replace with confirmation",
-	"v-Action-S-tag    Apply tag on action"
+	"v-Action-S-tag    Apply tag on action",
 }
 
 local git_blame_and_lsp_utils = {
 	'ysiw" Surround word with ""',
 	"yss(  Surround Sentence ()",
 	'ds"   Delete Surround "',
-	'dst   Delete Surround tags',
-	'cst<  Change Surround <',
-	'cs"\' Change Surround "a" => \'a\'',
-	
+	"dst   Delete Surround tags",
+	"cst<  Change Surround <",
+	"cs\"' Change Surround \"a\" => 'a'",
 }
 
 local lsp_nav2 = {

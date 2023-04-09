@@ -55,3 +55,7 @@ vim.cmd([[
   nnoremap <S-h> :call ToggleHiddenAll()<CR>
   autocmd BufRead,BufNewFile * set laststatus=0
 ]])
+
+-- vim.cmd([[
+--  call wilder#setup({'modes': [':', '/', '?']})
+-- ]])

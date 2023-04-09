@@ -1,5 +1,5 @@
 local opt = vim.opt
-
+opt.cmdheight = 0 -- hide command till no search or :/ key press
 opt.number = true -- shows absolute line number on cursor line (when relative number is on)
 opt.relativenumber = true -- show relative line numbers
 opt.laststatus = 3
@@ -28,3 +28,5 @@ opt.spelllang = "en_us"
 opt.ignorecase = true -- ignore search case
 opt.clipboard = "unnamedplus" -- Copy paste between vim and everything else
 opt.bg = "dark"
+
+opt.autoread = true -- reload buffer when change out side of vim

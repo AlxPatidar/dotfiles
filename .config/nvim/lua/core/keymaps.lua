@@ -87,6 +87,7 @@ map("n", "<C-p>", "<cmd>Telescope find_files<cr>")
 map("n", "<leader>ff", "<cmd>Telescope find_files<cr>")
 -- find string in current working directory as you type
 map("n", "<C-f>", "<cmd>Telescope live_grep<cr>")
+map("n", "<leader>f", "<cmd>Telescope live_grep<cr>")
 map("n", "<leader>fs", "<cmd>Telescope live_grep<cr>")
 -- find string under cursor in current working directory
 map("n", "<leader>fc", "<cmd>Telescope grep_string<cr>")
@@ -99,3 +100,5 @@ map("n", "<leader>fh", "<cmd>Telescope help_tags<cr>")
 map("n", "<leader>ff", "<cmd>lua require('plugins.telescope.functions').find_in_folder()<CR>")
 -- search vim
 map("n", "<leader>vim", "<cmd>lua require('plugins.telescope.functions').search_dotfiles()<CR>")
+-- allow command box on telescope and enter comand
+map("n", "<leader>git", "<cmd>lua require('plugins.telescope.functions').run_command()<CR>")

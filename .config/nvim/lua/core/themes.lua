@@ -34,8 +34,32 @@ vim.cmd("syntax on")
 -- vim.g.everforest_background = "soft"
 
 -- Nightfly
-vim.cmd([[colorscheme nightfly]])
+-- vim.cmd([[colorscheme nightfly]])
+-- kanagawa
+require("kanagawa").setup({
+	colors = {
+		theme = {
+			all = {
+				float = {
+					bg = "none",
+				},
+				ui = {
+					bg_gutter = "none",
+				},
+			},
+		},
+	},
+	theme = "wave", -- can be "wave", "dragon" or empty string
+	overrides = function(colors)
+		local theme = colors.theme
+		return {
+			SignColumn = { bg = theme.ui.bg_m1, fg = theme.ui.bg_m1 },
+		}
+	end,
+})
+vim.cmd([[colorscheme kanagawa]])
 
+-- vim.cmd([[ colorscheme ghdark ]])
 -- Sonokai
 -- 'default' | 'atlantis' | 'andromeda' | 'shusia' | 'maia' | 'espresso'
 -- vim.cmd([[colorscheme sonokai]])
